@@ -6,11 +6,9 @@ const Gallery = () => {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const apiKey = process.env.REACT_APP_CLIENT;
-  console.log(apiKey);
   const endPoint = `https://api.unsplash.com/search/photos?page=${page}&query=${query}&client_id=${apiKey}`;
 
   const { data, loading, error, reFetch } = useFetch(endPoint);
-  console.log(data);
 
   return (
     <div className="gallery">
